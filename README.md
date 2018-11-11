@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # bokunofune
 
 > bokunofune&#39;s HP
@@ -20,3 +21,7 @@ $ yarn run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+=======
+# bokunofune-shelter
+bokunofune's repository
+>>>>>>> origin/master
