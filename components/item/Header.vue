@@ -25,6 +25,14 @@ ul {
 li {
   list-style: none;
 }
+.header__wrapper {
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: #ffffff;
+}
 .container {
   max-width: 1080px;
   margin: 0 auto;
