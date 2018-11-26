@@ -1,7 +1,10 @@
 <template>
-  <Header/>
-  <!--<nuxt/>-->
-  <!--<Footer/>-->
+  <div>
+    <Header/>
+    <!--<nuxt/>-->
+    <Footer/>
+  </div>
+
 </template>
 
 <script>
