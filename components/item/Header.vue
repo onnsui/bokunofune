@@ -60,11 +60,11 @@ li {
   width: 100%;
   background-color: #ffffff;
 }
-.container {
-  max-width: 1080px;
-  margin: 0 auto;
-}
 @media (min-width: 769px) {
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
   .header {
     &__wrapper {
       padding: 20px;

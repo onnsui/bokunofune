@@ -2,6 +2,7 @@
   <div>
     <Header/>
     <!--<nuxt/>-->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <Footer/>
   </div>
 
@@ -14,8 +15,8 @@ import Footer from '~/components/item/Footer.vue'
 export default {
   components: {
     Header,
-    Footer
-  }
+    Footer,
+  },
 }
 </script>
 
