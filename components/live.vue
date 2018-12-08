@@ -34,7 +34,8 @@
       :visible.sync="dialogVisible"
       title="チケット予約"
       width="80%">
-      <form name="contactform" netlify>
+      <form name="contactform" data-netlify="true" method="post">
+        <input type="hidden" name="form-name" value="contact" />
         <p>
           <label>Your Name: <input type="text" name="name"></label>
         </p>
