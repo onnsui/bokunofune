@@ -25,34 +25,31 @@ const config = {
     vendor: ['element-ui'],
   },
   // build: {
-    // babel: {
-    //   plugins: [
-    //     [
-    //       'component',
-    //       [
-    //         {
-    //           libraryName: 'element-ui',
-    //         },
-    //       ],
-    //     ],
-    //   ],
-    // },
-    // extend(config, { isDev, isClient }) {
-    //   if (isDev && isClient) {
-    //     config.module.rules.push({
-    //       enforce: 'pre',
-    //       test: /\.(js|vue)$/,
-    //       loader: 'eslint-loader',
-    //       exclude: /(node_modules)/,
-    //     })
-    //   }
-    // },
+  // babel: {
+  //   plugins: [
+  //     [
+  //       'component',
+  //       [
+  //         {
+  //           libraryName: 'element-ui',
+  //         },
+  //       ],
+  //     ],
+  //   ],
+  // },
+  // extend(config, { isDev, isClient }) {
+  //   if (isDev && isClient) {
+  //     config.module.rules.push({
+  //       enforce: 'pre',
+  //       test: /\.(js|vue)$/,
+  //       loader: 'eslint-loader',
+  //       exclude: /(node_modules)/,
+  //     })
+  //   }
+  // },
   // },
 
-  plugins: [
-    { src: '~plugins/contentful' },
-    { src: '~plugins/element-ui' },
-  ],
+  plugins: [{ src: '~plugins/contentful' }, { src: '~plugins/element-ui' }],
   css: ['element-ui/lib/theme-chalk/index.css'],
   generate: {
     routes() {
