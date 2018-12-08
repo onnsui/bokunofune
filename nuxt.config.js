@@ -8,6 +8,7 @@ const { createClient } = require('./plugins/contentful')
 const cdaClient = createClient(ctfConfig)
 
 const config = {
+  mode: 'spa',
   head: {
     title: 'bokunofune',
     meta: [
@@ -21,16 +22,16 @@ const config = {
   loading: { color: '#3B8070' },
 
   build: {
-    extend(config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-        })
-      }
-    },
+    // extend(config, { isDev, isClient }) {
+    //   if (isDev && isClient) {
+    //     config.module.rules.push({
+    //       enforce: 'pre',
+    //       test: /\.(js|vue)$/,
+    //       loader: 'eslint-loader',
+    //       exclude: /(node_modules)/,
+    //     })
+    //   }
+    // },
   },
 
   plugins: [{ src: '~plugins/contentful' }],

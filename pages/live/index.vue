@@ -3,16 +3,20 @@
     <live
       v-for="post in posts"
       :key="post.fields.slug"
+      :date="post.fields.date"
       :title="post.fields.title"
       :slug="post.fields.slug"
-      :header-image="post.fields.headerImage"
-      :published-at="post.fields.publishedAt"/>
+      :locate="post.fields.place"
+      :time="post.fields.time"
+      :band="post.fields.band"
+      :url="post.fields.url"
+    />
   </section>
 </template>
 
 <script>
-import Live from '~/components/live.vue'
-import { createClient } from '~/plugins/contentful.js'
+import Live from '~/components/live'
+import { createClient } from '~/plugins/contentful'
 
 const client = createClient()
 export default {
@@ -24,9 +28,10 @@ export default {
     return await client
       .getEntries({
         content_type: env.CTF_BLOG_POST_TYPE_ID,
-        order: '-fields.publishedAt',
+        // order: '-fields.publishedAt',
       })
       .then(entries => {
+        console.log(entries)
         return {
           posts: entries.items,
         }

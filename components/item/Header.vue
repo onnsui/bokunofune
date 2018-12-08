@@ -54,7 +54,7 @@ li {
 }
 .header__wrapper {
   left: 0;
-  position: fixed;
+  /*position: fixed;*/
   top: 0;
   z-index: 100;
   width: 100%;

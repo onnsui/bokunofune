@@ -18,11 +18,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
     "@fortawesome/vue-fontawesome": "^0.1.2",
     "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/markdownit": "^1.2.2",
     "contentful": "^7.0.5",
     "cross-env": "^5.2.0",
     "dotenv": "^6.1.0",
-    "nuxt": "^2.0.0",
-    "vue-markdown": "^2.2.4"
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

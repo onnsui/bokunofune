@@ -4,23 +4,23 @@
     <p class="slug_date">
       {{ (new Date(post.fields.publishedAt)).toLocaleDateString() }}
     </p>
-    <img 
-      :src="post.fields.headerImage.fields.file.url" 
+    <img
+      :src="post.fields.headerImage.fields.file.url"
       class="slug_image">
-    <vue-markdown>{{ post.fields.body }}</vue-markdown>
+    {{ post.fields.body }}
   </section>
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown'
+// import VueMarkdown from 'vue-markdown'
 import { createClient } from '~/plugins/contentful.js'
 
 const client = createClient()
 export default {
   transition: 'slide-left',
-  components: {
-    VueMarkdown,
-  },
+  // components: {
+  //   VueMarkdown,
+  // },
   async asyncData({ env, params }) {
     return await client
       .getEntries({
