@@ -1,17 +1,20 @@
 <template>
-  <section class="index">
-    <live
-      v-for="post in posts"
-      :key="post.fields.slug"
-      :date="post.fields.date"
-      :title="post.fields.title"
-      :slug="post.fields.slug"
-      :locate="post.fields.place"
-      :time="post.fields.time"
-      :band="post.fields.band"
-      :url="post.fields.url"
-    />
-  </section>
+  <div class="container">
+    <section class="index">
+      <live
+        v-for="post in posts"
+        :key="post.fields.slug"
+        :date="post.fields.date"
+        :title="post.fields.title"
+        :slug="post.fields.slug"
+        :place="post.fields.place"
+        :time="post.fields.time"
+        :fee="post.fields.fee"
+        :band="post.fields.band"
+        :url="post.fields.url"
+      />
+    </section>
+  </div>
 </template>
 
 <script>
@@ -31,6 +34,7 @@ export default {
         // order: '-fields.publishedAt',
       })
       .then(entries => {
+        // console.log(this.fields.image)
         console.log(entries)
         return {
           posts: entries.items,
@@ -42,6 +46,10 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
 .index {
   display: flex;
   flex-wrap: wrap;
