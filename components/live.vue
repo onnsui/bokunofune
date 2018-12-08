@@ -120,7 +120,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('//unpkg.com/element-ui@2.4.11/lib/theme-chalk/index.css');
+/*@import url('//unpkg.com/element-ui@2.4.11/lib/theme-chalk/index.css');*/
 .card {
   text-decoration: none;
   color: #333;

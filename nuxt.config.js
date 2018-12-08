@@ -7,13 +7,6 @@ const ctfConfig = getConfigForKeys([
 const { createClient } = require('./plugins/contentful')
 const cdaClient = createClient(ctfConfig)
 
-module.exports = {
-  build: {
-    vendor: ['element-ui'],
-  },
-  plugins: ['~plugins/element-ui'],
-  css: ['element-ui/lib/theme-chalk/index.css'],
-}
 const config = {
   mode: 'spa',
   head: {
@@ -29,6 +22,9 @@ const config = {
   loading: { color: '#3B8070' },
 
   build: {
+    vendor: ['element-ui'],
+  },
+  // build: {
     // babel: {
     //   plugins: [
     //     [
@@ -51,13 +47,13 @@ const config = {
     //     })
     //   }
     // },
-  },
+  // },
 
   plugins: [
     { src: '~plugins/contentful' },
-    { src: '~plugins/element-ui', ssr: false },
+    { src: '~plugins/element-ui' },
   ],
-
+  css: ['element-ui/lib/theme-chalk/index.css'],
   generate: {
     routes() {
       return cdaClient
