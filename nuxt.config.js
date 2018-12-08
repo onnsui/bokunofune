@@ -22,6 +22,18 @@ const config = {
   loading: { color: '#3B8070' },
 
   build: {
+    // babel: {
+    //   plugins: [
+    //     [
+    //       'component',
+    //       [
+    //         {
+    //           libraryName: 'element-ui',
+    //         },
+    //       ],
+    //     ],
+    //   ],
+    // },
     // extend(config, { isDev, isClient }) {
     //   if (isDev && isClient) {
     //     config.module.rules.push({
@@ -34,7 +46,10 @@ const config = {
     // },
   },
 
-  plugins: [{ src: '~plugins/contentful' }],
+  plugins: [
+    { src: '~plugins/contentful' },
+    { src: '~plugins/element-ui', ssr: false },
+  ],
 
   generate: {
     routes() {

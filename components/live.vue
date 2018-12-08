@@ -28,6 +28,22 @@
           </div>
         </div>
       </div>
+      <el-dialog
+        :visible.sync="dialogVisible"
+        :before-close="handleClose"
+        title="Tips"
+        width="30%">
+        <span>This is a message</span>
+        <span
+          slot="footer"
+          class="dialog-footer">
+          <el-button @click="dialogVisible = false">Cancel</el-button>
+          <el-button
+            type="primary"
+            @click="dialogVisible = false">Confirm</el-button>
+        </span>
+      </el-dialog>
+
       <div class="card__button">
         TICKET
       </div>
@@ -36,117 +52,129 @@
 </template>
 
 <script>
-  /* eslint-disable */
-  export default {
-    props: {
-      // image: {
-      //   type: object,
-      //   default: '20123',
-      // },
-      date: {
-        type: Date,
-        default: 2019 / 1 / 1,
-      },
-      title: {
-        type: String,
-        default: 'ライブタイトル',
-      },
-      slug: {
-        type: String,
-        default: '1111',
-      },
-      place: {
-        type: String,
-        default: '恵比寿LIQUID ROOM',
-      },
-      time: {
-        type: String,
-        default: 'OPEN_START',
-      },
-      fee: {
-        type: String,
-        default: 'aa/aa/aa',
-      },
-      band: {
-        type: String,
-        default: 'aa/aa/aa',
-      },
-      url: {
-        type: String,
-        default: 'http://',
-      },
+export default {
+  props: {
+    // image: {
+    //   type: object,
+    //   default: '20123',
+    // },
+    date: {
+      type: Date,
+      default: 2019 / 1 / 1,
     },
-  }
+    title: {
+      type: String,
+      default: 'ライブタイトル',
+    },
+    slug: {
+      type: String,
+      default: '1111',
+    },
+    place: {
+      type: String,
+      default: '恵比寿LIQUID ROOM',
+    },
+    time: {
+      type: String,
+      default: 'OPEN_START',
+    },
+    fee: {
+      type: String,
+      default: 'aa/aa/aa',
+    },
+    band: {
+      type: String,
+      default: 'aa/aa/aa',
+    },
+    url: {
+      type: String,
+      default: 'http://',
+    },
+  },
+  data() {
+    return {
+      dialogVisible: false,
+    }
+  },
+  methods: {
+    handleClose(done) {
+      this.$confirm('Are you sure to close this dialog?')
+        .then(_ => {
+          done()
+        })
+        .catch(_ => {})
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-
-  .card {
-    text-decoration: none;
-    color: #333;
-    padding: 20px;
-    display: flex;
+.card {
+  text-decoration: none;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  &__image {
+    margin-right: 35px;
+  }
+  &__top {
+    margin-bottom: 16px;
+  }
+  &__logo {
+    color: #fff;
+    font-weight: bold;
     font-size: 14px;
-    align-items: center;
-    &__image {
-      margin-right: 35px;
-    }
-    &__top {
-      margin-bottom: 16px;
-    }
-    &__logo {
-      color: #fff;
-      font-weight: bold;
-      font-size: 14px;
-      border-radius: 2px;
-      background-color: #000;
-      padding: 5px 13px;
-      margin-right: 20px;
-    }
-    &__date {
-      font-size: 18px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      text-align: center;
-    }
-    &__middle {
-      margin-bottom: 24px;
-    }
-    &__title {
-      font-size: 30px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    &__bottom {
-      display: flex;
-      max-width: 500px;
-    }
-    &__bottom-left {
-      margin-right: 68px;
-      min-width: 100px;
-      width: 20%;
-      p {
-        margin-bottom: 6px;
-      }
-    }
-    &__bottom-right {
-      width: 80%;
-      p {
-        margin-bottom: 6px;
-      }
-    }
-    &__button {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 0.6px;
-      color: #ffffff;
-      background-color: #000;
-      padding: 12px 46px;
-      border-radius: 4px;
-      height: 52px;
+    border-radius: 2px;
+    background-color: #000;
+    padding: 5px 13px;
+    margin-right: 20px;
+  }
+  &__date {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  &__middle {
+    margin-bottom: 24px;
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  &__bottom {
+    display: flex;
+    max-width: 500px;
+  }
+  &__bottom-left {
+    margin-right: 68px;
+    min-width: 100px;
+    width: 20%;
+    p {
+      margin-bottom: 6px;
     }
   }
+  &__bottom-right {
+    width: 80%;
+    p {
+      margin-bottom: 6px;
+    }
+  }
+  &__button {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+    background-color: #000;
+    padding: 12px 46px;
+    border-radius: 4px;
+    height: 52px;
+  }
+}
 </style>
