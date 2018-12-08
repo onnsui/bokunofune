@@ -1,53 +1,64 @@
 <template>
   <div class="card">
-    <nuxt-link
-      :to="{ name: 'blog-slug', params: { slug: slug }}"
-      class="card">
-      <div class="card__image"><img src="http://placehold.jp/240x214.png"></div>
-      <div class="card__contents">
-        <div class="card__top">
-          <span class="card__logo">LIVE</span>
-          <span class="card__date">{{ date }}</span>
+    <div class="card__image"><img src="http://placehold.jp/240x214.png"></div>
+    <div class="card__contents">
+      <div class="card__top">
+        <span class="card__logo">LIVE</span>
+        <span class="card__date">{{ date }}</span>
+      </div>
+      <div class="card__middle">
+        <div class="card__title">{{ title }}</div>
+        <div class="card__place">{{ place }}</div>
+      </div>
+      <div class="card__bottom">
+        <div class="card__bottom-left">
+          <p>OPEN / START</p>
+          <p>ADV / DOOR</p>
+          <p>WITH</p>
+          <p>DETAIL</p>
         </div>
-        <div class="card__middle">
-          <div class="card__title">{{ title }}</div>
-          <div class="card__place">{{ place }}</div>
-        </div>
-        <div class="card__bottom">
-          <div class="card__bottom-left">
-            <p>OPEN / START</p>
-            <p>ADV / DOOR</p>
-            <p>WITH</p>
-            <p>DETAIL</p>
-          </div>
-          <div class="card__bottom-right">
-            <p class="card__time">{{ time }}</p>
-            <p class="card__time">{{ fee }}</p>
-            <p class="card__band">{{ band }}</p>
-            <p class="card__url">{{ url }}</p>
-          </div>
+        <div class="card__bottom-right">
+          <p class="card__time">{{ time }}</p>
+          <p class="card__time">{{ fee }}</p>
+          <p class="card__band">{{ band }}</p>
+          <p class="card__url">{{ url }}</p>
         </div>
       </div>
-      <el-dialog
-        :visible.sync="dialogVisible"
-        :before-close="handleClose"
-        title="Tips"
-        width="30%">
-        <span>This is a message</span>
-        <span
-          slot="footer"
-          class="dialog-footer">
-          <el-button @click="dialogVisible = false">Cancel</el-button>
-          <el-button
-            type="primary"
-            @click="dialogVisible = false">Confirm</el-button>
-        </span>
-      </el-dialog>
-
-      <div class="card__button">
-        TICKET
-      </div>
-    </nuxt-link>
+    </div>
+    <el-button
+      type="text"
+      class="card__button"
+      @click="dialogVisible = true">TICKET
+    </el-button>
+    <el-dialog
+      :visible.sync="dialogVisible"
+      title="チケット予約"
+      width="80%">
+      <form name="contactform" action="thanks" netlify>
+        <p>
+          <label>Your Name: <input type="text" name="name"></label>
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email"></label>
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+      <span
+        slot="footer"
+        class="dialog-footer">
+        <el-button
+          type="primary"
+          @click="dialogVisible = false">チケット予約</el-button>
+      </span>
+    </el-dialog>
+    <!--<div class="card__button">-->
+    <!--TICKET-->
+    <!--</div>-->
   </div>
 </template>
 
@@ -109,6 +120,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url('//unpkg.com/element-ui@2.4.11/lib/theme-chalk/index.css');
 .card {
   text-decoration: none;
   color: #333;
@@ -176,5 +188,23 @@ export default {
     border-radius: 4px;
     height: 52px;
   }
+}
+/deep/ .el-dialog {
+  &__header {
+    background-color: #000;
+    color: #fff;
+  }
+  &__title {
+    color: #fff;
+    font-weight: bold;
+  }
+  &__footer {
+    text-align: center;
+  }
+}
+.el-button--primary {
+  background-color: #000;
+  font-weight: bold;
+  width: 450px;
 }
 </style>
