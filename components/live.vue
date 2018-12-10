@@ -54,6 +54,12 @@
           <!--<button type="submit">Send</button>-->
         <!--</p>-->
       <!--</form>-->
+      <!-- A little help for the Netlify bots if you're not using a SSG -->
+      <form name="contactform" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="remark"></textarea>
+      </form>
       <form
         name="contactform"
         method="POST"
