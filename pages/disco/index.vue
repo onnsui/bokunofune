@@ -32,7 +32,7 @@ export default {
     return await client
       .getEntries({
         content_type: env.CTF_BLOG_POST_TYPE_ID,
-        order: '-fields.date',
+        // order: '-fields.publishedAt',
       })
       .then(entries => {
         return {
