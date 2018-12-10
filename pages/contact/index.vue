@@ -15,12 +15,14 @@
             <span>お名前</span>
             <el-input
               v-model="name"
+              name="name"
               placeholder="お名前"/>
           </div>
           <div class="contact__form-wrapper">
             <span>チケット枚数</span>
             <el-input
               v-model="email"
+              name="email"
               placeholder="メールアドレス"/>
           </div>
           <div class="contact__form-wrapper last">
@@ -28,6 +30,7 @@
             <el-input
               :rows="3"
               v-model="remark"
+              name="remark"
               type="textarea"
               placeholder="その他"/>
           </div>
