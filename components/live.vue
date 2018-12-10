@@ -34,33 +34,33 @@
       :visible.sync="dialogVisible"
       title="チケット予約"
       width="80%">
-      <form name="contact" method="POST" netlify>
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <label>Your Role: <select name="role[]" multiple>
-            <option value="leader">Leader</option>
-            <option value="follower">Follower</option>
-          </select></label>
-        </p>
-        <p>
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
+      <!--<form name="contact" method="POST" netlify>-->
+        <!--<p>-->
+          <!--<label>Your Name: <input type="text" name="name" /></label>-->
+        <!--</p>-->
+        <!--<p>-->
+          <!--<label>Your Email: <input type="email" name="email" /></label>-->
+        <!--</p>-->
+        <!--<p>-->
+          <!--<label>Your Role: <select name="role[]" multiple>-->
+            <!--<option value="leader">Leader</option>-->
+            <!--<option value="follower">Follower</option>-->
+          <!--</select></label>-->
+        <!--</p>-->
+        <!--<p>-->
+          <!--<label>Message: <textarea name="message"></textarea></label>-->
+        <!--</p>-->
+        <!--<p>-->
+          <!--<button type="submit">Send</button>-->
+        <!--</p>-->
+      <!--</form>-->
       <form
         name="contactform"
         method="POST"
         data-netlify="true">
         <input
           type="hidden"
-          name="form-name"
+          name="contactform"
           value="contactform" >
         <div class="card__form-wrapper">
           <span>お名前</span>
@@ -71,8 +71,8 @@
         <div class="card__form-wrapper">
           <span>チケット枚数</span>
           <el-input
-            v-model="mail"
-            placeholder="メールアドレス"/>
+            v-model="email"
+            placeholder="チケット枚数"/>
         </div>
         <div class="card__form-wrapper">
           <span>備考欄</span>
@@ -145,7 +145,7 @@ export default {
     return {
       dialogVisible: false,
       name: '',
-      mail: '',
+      email: '',
       remark: '',
     }
   },
