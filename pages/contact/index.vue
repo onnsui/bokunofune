@@ -5,6 +5,7 @@
       <div class="contact__wrapper">
         <form
           name="contactform"
+          method="POST"
           data-netlify="true">
           <input
             type="hidden"
@@ -19,7 +20,7 @@
           <div class="contact__form-wrapper">
             <span>チケット枚数</span>
             <el-input
-              v-model="mail"
+              v-model="email"
               placeholder="メールアドレス"/>
           </div>
           <div class="contact__form-wrapper last">
@@ -35,6 +36,7 @@
             class="dialog-footer">
             <el-button
               type="primary"
+              native-type="submit"
               @click="dialogVisible = false">チケット予約
             </el-button>
           </div>
@@ -52,7 +54,7 @@ export default {
   data() {
     return {
       name: '',
-      mail: '',
+      email: '',
       remark: '',
     }
   },
