@@ -3,13 +3,13 @@
     <div class="container">
       <div class="header__content">
         <ul>
-          <li>LIVE</li>
-          <li>DISCO</li>
-          <li>PROFILE</li>
-          <li><img src="~/static/img/logo.png"></li>
-          <li>MOVIE</li>
-          <li>GALLERY</li>
-          <li>CONTACT</li>
+          <li><nuxt-link to="/live">LIVE</nuxt-link></li>
+          <li><nuxt-link to="/disco">DISCO</nuxt-link></li>
+          <li><nuxt-link to="/profile">PROFILE</nuxt-link></li>
+          <li><nuxt-link to="/"><img src="~/static/img/logo.png"></nuxt-link></li>
+          <li><nuxt-link to="/movie">MOVIE</nuxt-link></li>
+          <li><nuxt-link to="/gallery">GALLERY</nuxt-link></li>
+          <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
         </ul>
       </div>
       <div class="header__nav">
@@ -28,13 +28,13 @@
             for="nav-input"/>
           <div id="nav-content">
             <ul>
-              <li><img src="~/static/img/logo_fune.png"></li>
-              <li>LIVE</li>
-              <li>DISCO</li>
-              <li>PROFILE</li>
-              <li>MOVIE</li>
-              <li>GALLERY</li>
-              <li>CONTACT</li>
+              <li><nuxt-link to="/"><img src="~/static/img/logo_fune.png"></nuxt-link></li>
+              <li><nuxt-link to="/live">LIVE</nuxt-link></li>
+              <li><nuxt-link to="/disco">DISCO</nuxt-link></li>
+              <li><nuxt-link to="/profile">PROFILE</nuxt-link></li>
+              <li><nuxt-link to="/movie">MOVIE</nuxt-link></li>
+              <li><nuxt-link to="/gallery">GALLERY</nuxt-link></li>
+              <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
             </ul>
           </div>
         </div>
@@ -48,6 +48,10 @@
 ul {
   margin: 0;
   padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
 }
 li {
   list-style: none;
