@@ -19,20 +19,20 @@
               placeholder="お名前"/>
           </div>
           <div class="contact__form-wrapper">
-            <span>チケット枚数</span>
+            <span>Email</span>
             <el-input
               v-model="email"
               name="email"
               placeholder="メールアドレス"/>
           </div>
           <div class="contact__form-wrapper last">
-            <span>備考欄</span>
+            <span>メッセージ</span>
             <el-input
               :rows="3"
               v-model="remark"
               name="remark"
               type="textarea"
-              placeholder="その他"/>
+              placeholder=""/>
           </div>
           <div
             slot="footer"
@@ -40,7 +40,7 @@
             <el-button
               type="primary"
               native-type="submit"
-              @click="dialogVisible = false">チケット予約
+              @click="dialogVisible = false">送信
             </el-button>
           </div>
         </form>
