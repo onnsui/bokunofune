@@ -35,30 +35,38 @@
       title="チケット予約"
       width="80%">
       <!--<form name="contact" method="POST" netlify>-->
-        <!--<p>-->
-          <!--<label>Your Name: <input type="text" name="name" /></label>-->
-        <!--</p>-->
-        <!--<p>-->
-          <!--<label>Your Email: <input type="email" name="email" /></label>-->
-        <!--</p>-->
-        <!--<p>-->
-          <!--<label>Your Role: <select name="role[]" multiple>-->
-            <!--<option value="leader">Leader</option>-->
-            <!--<option value="follower">Follower</option>-->
-          <!--</select></label>-->
-        <!--</p>-->
-        <!--<p>-->
-          <!--<label>Message: <textarea name="message"></textarea></label>-->
-        <!--</p>-->
-        <!--<p>-->
-          <!--<button type="submit">Send</button>-->
-        <!--</p>-->
+      <!--<p>-->
+      <!--<label>Your Name: <input type="text" name="name" /></label>-->
+      <!--</p>-->
+      <!--<p>-->
+      <!--<label>Your Email: <input type="email" name="email" /></label>-->
+      <!--</p>-->
+      <!--<p>-->
+      <!--<label>Your Role: <select name="role[]" multiple>-->
+      <!--<option value="leader">Leader</option>-->
+      <!--<option value="follower">Follower</option>-->
+      <!--</select></label>-->
+      <!--</p>-->
+      <!--<p>-->
+      <!--<label>Message: <textarea name="message"></textarea></label>-->
+      <!--</p>-->
+      <!--<p>-->
+      <!--<button type="submit">Send</button>-->
+      <!--</p>-->
       <!--</form>-->
       <!-- A little help for the Netlify bots if you're not using a SSG -->
-      <form name="contactform" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="remark"></textarea>
+      <form 
+        name="contactform" 
+        netlify 
+        netlify-honeypot="bot-field" 
+        hidden>
+        <input 
+          type="text" 
+          name="name" >
+        <input 
+          type="email" 
+          name="email" >
+        <textarea name="remark"/>
       </form>
       <form
         name="contactform"

@@ -12,21 +12,21 @@
             name="form-name"
             value="contactform">
           <div class="contact__form-wrapper">
-            <span>お名前</span>
+            <label class="name">お名前</label>
             <el-input
               v-model="name"
               name="name"
               placeholder="お名前"/>
           </div>
           <div class="contact__form-wrapper">
-            <span>Email</span>
+            <label  class="mail">Email</label>
             <el-input
               v-model="email"
               name="email"
               placeholder="メールアドレス"/>
           </div>
           <div class="contact__form-wrapper last">
-            <span>メッセージ</span>
+            <label  class="message">メッセージ</label>
             <el-input
               :rows="3"
               v-model="remark"
@@ -82,9 +82,6 @@ export default {
     background-color: #ededed;
     padding: 35px 80px;
   }
-  &__wrapper {
-    margin-bottom: 20px;
-  }
   &__title {
     font-size: 24px;
     font-weight: bold;
@@ -115,7 +112,7 @@ export default {
   }
 }
 .dialog-footer {
-  margin: 0 auto;
+  margin: 2em auto 0 auto;
   width: 450px;
 }
 /deep/ .el-dialog {
@@ -135,5 +132,14 @@ export default {
   background-color: #000;
   font-weight: bold;
   width: 450px;
+}
+.name {
+  margin-right: 5em;
+}
+.mail {
+  margin-right: 5.5em;
+}
+.message {
+  margin-right: 3em;
 }
 </style>
