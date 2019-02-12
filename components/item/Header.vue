@@ -2,21 +2,30 @@
   <header class="header__wrapper">
     <div class="container">
       <div class="header__content">
-        <ul>
-          <li><nuxt-link to="/live">LIVE</nuxt-link></li>
-          <li><nuxt-link to="/disco">DISCO</nuxt-link></li>
-          <li><nuxt-link to="/profile">PROFILE</nuxt-link></li>
+        <div class="header__left">
+          <ul>
+            <li><nuxt-link to="/live">LIVE</nuxt-link></li>
+            <li><nuxt-link to="/disco">DISCO</nuxt-link></li>
+            <li><nuxt-link to="/profile">PROFILE</nuxt-link></li>
+          </ul>
+        </div>
+        <div class="header__image">
           <li><nuxt-link to="/"><img src="~/static/img/logo.png"></nuxt-link></li>
-          <li><nuxt-link to="/movie">MOVIE</nuxt-link></li>
-          <li><nuxt-link to="/gallery">GALLERY</nuxt-link></li>
-          <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
-        </ul>
+        </div>
+        <div class="header__right">
+          <ul>
+            <li><nuxt-link to="/movie">MOVIE</nuxt-link></li>
+            <li><nuxt-link to="/gallery">GALLERY</nuxt-link></li>
+            <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
+          </ul>
+        </div>
       </div>
       <div class="header__nav">
         <div class="header__nav-logo"><img src="http://placehold.jp/160x40.png"></div>
         <div id="nav-drawer">
           <input
             id="nav-input"
+
             type="checkbox"
             class="nav-unshown">
           <label
@@ -73,12 +82,36 @@ li {
     &__wrapper {
       padding: 20px;
       border-bottom: 1px solid #979797;
+      height: 130px;
+      position: relative;
+    }
+    &__image {
+      position: absolute;
+      left: 50%;
+      margin: 0 0 0 -80px;
+    }
+    &__left {
+      position: absolute;
+      left: 100px;
+      width: 32%;
+      top: 50px;
+    }
+    &__right {
+      position: absolute;
+      right: 100px;
+      width: 32%;
+      top: 50px;
     }
     &__content {
+      display: flex;
       & ul {
         display: flex;
         align-items: center;
         justify-content: space-between;
+      }
+      li {
+        /*width: 8%;*/
+        /*margin-right: 4em;*/
       }
       & img {
         width: 160px;
@@ -99,10 +132,16 @@ li {
       padding: 17px;
       border-bottom: 1px solid #979797;
     }
+    &__right {
+      width: 200px;
+    }
     &__content {
       & ul {
         display: none;
       }
+    }
+    &__image {
+      display: none;
     }
     &__nav {
       display: flex;

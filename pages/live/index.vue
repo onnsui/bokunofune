@@ -24,12 +24,11 @@ import { createClient } from '~/plugins/contentful'
 
 const client = createClient()
 export default {
-  transition: 'slide-left',
   components: {
     Live,
   },
-  async asyncData({ env, params }) {
-    return await client
+  asyncData({ env, params }) {
+    return client
       .getEntries({
         content_type: env.CTF_BLOG_POST_TYPE_ID,
         order: '-fields.date',
