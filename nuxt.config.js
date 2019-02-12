@@ -53,19 +53,19 @@ const config = {
 
   plugins: [{ src: '~plugins/contentful' }, { src: '~plugins/element-ui' }],
   css: ['element-ui/lib/theme-chalk/index.css'],
-  generate: {
-    routes() {
-      return cdaClient
-        .getEntries({
-          content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID,
-          // disco_type: ctfConfig.CTF_DISCO_POST_TYPE_ID,
-          // gallery_type: ctfConfig.CTF_GALLERY_POST_TYPE_ID,
-        })
-        .then(entries => {
-          return [...entries.items.map(entry => `/blog/${entry.fields.slug}`)]
-        })
-    },
-  },
+  // generate: {
+  //   routes() {
+  //     return cdaClient
+  //       .getEntries({
+  //         content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID,
+  //         disco_type: ctfConfig.CTF_DISCO_POST_TYPE_ID,
+  //         // gallery_type: ctfConfig.CTF_GALLERY_POST_TYPE_ID,
+  //       })
+  //       .then(entries => {
+  //         return [...entries.items.map(entry => `/blog/${entry.fields.slug}`)]
+  //       })
+  //   },
+  // },
 
   env: {
     CTF_SPACE_ID: ctfConfig.CTF_SPACE_ID,

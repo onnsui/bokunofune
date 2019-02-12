@@ -132,6 +132,9 @@ li {
       padding: 17px;
       border-bottom: 1px solid #979797;
     }
+    &__right {
+      width: 200px;
+    }
     &__content {
       & ul {
         display: none;

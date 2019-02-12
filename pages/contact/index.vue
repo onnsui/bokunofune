@@ -19,20 +19,20 @@
               placeholder="お名前"/>
           </div>
           <div class="contact__form-wrapper">
-            <label  class="mail">Email</label>
+            <label class="mail">Email</label>
             <el-input
               v-model="email"
               name="email"
               placeholder="メールアドレス"/>
           </div>
           <div class="contact__form-wrapper last">
-            <label  class="message">メッセージ</label>
+            <label class="message">メッセージ</label>
             <el-input
               :rows="3"
               v-model="remark"
               name="remark"
               type="textarea"
-              placeholder=""/>
+              placeholder="自由に入力して下さい"/>
           </div>
           <div
             slot="footer"
@@ -76,6 +76,7 @@ export default {
 <style lang="scss" scoped>
 .contact {
   margin: 35px 0;
+  min-height: 70vh;
   &__box {
     width: 70%;
     margin: 0 auto;
@@ -141,5 +142,40 @@ export default {
 }
 .message {
   margin-right: 3em;
+}
+@media (max-width: 768px) {
+  .contact__box {
+    width: 90%;
+    padding: 20px 35px;
+  }
+  .contact__form-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5em;
+    .el-input {
+      width: 100%;
+    }
+    .el-textarea {
+      width: 100%;
+    }
+  }
+  .name {
+    margin-bottom: 1em;
+  }
+  .mail {
+    margin-bottom: 1em;
+  }
+  .message {
+    margin-bottom: 1em;
+  }
+  .dialog-footer {
+    margin: 2em auto 0 auto;
+    width: 250px;
+  }
+  .el-button--primary {
+    background-color: #000;
+    font-weight: bold;
+    width: 100%;
+  }
 }
 </style>

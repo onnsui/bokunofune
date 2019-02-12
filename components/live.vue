@@ -1,27 +1,36 @@
 <template>
   <div class="card">
-    <div class="card__image"><img :src="image.fields.file.url"></div>
-    <div class="card__contents">
-      <div class="card__top">
-        <span class="card__logo">LIVE</span>
-        <span class="card__date">{{ date }}</span>
-      </div>
-      <div class="card__middle">
-        <div class="card__title">{{ title }}</div>
-        <div class="card__place">{{ place }}</div>
-      </div>
-      <div class="card__bottom">
-        <div class="card__bottom-left">
-          <p>OPEN / START</p>
-          <p>ADV / DOOR</p>
-          <p>WITH</p>
-          <p>DETAIL</p>
+    <div class="card__left">
+      <div class="card__image"><img :src="image.fields.file.url"></div>
+      <div class="card__contents">
+        <div class="card__top">
+          <span class="card__logo">LIVE</span>
+          <span class="card__date">{{ date }}</span>
         </div>
-        <div class="card__bottom-right">
-          <p class="card__time">{{ time }}</p>
-          <p class="card__time">{{ fee }}</p>
-          <p class="card__band">{{ band }}</p>
-          <p class="card__url">{{ url }}</p>
+        <div class="card__middle">
+          <div class="card__title">{{ title }}</div>
+          <div class="card__place">{{ place }}</div>
+        </div>
+        <div class="card__bottom">
+          <div class="card__bottom-row">
+            <p class="card__bottom-left">OPEN/START</p>
+            <p class="card__time">{{ time }}</p>
+          </div>
+          <div class="card__bottom-row">
+            <p class="card__bottom-left">ADV/DOOR</p>
+            <p class="card__time">{{ fee }}</p>
+          </div>
+          <div class="card__bottom-row">
+            <p class="card__bottom-left">WITH</p>
+            <p class="card__band">{{ band }}</p>
+          </div>
+          <div class="card__bottom-row">
+            <p class="card__bottom-left">DETAIL</p>
+            <a
+              :href="url"
+              target="_blank"
+              class="card__url">詳細</a>
+          </div>
         </div>
       </div>
     </div>
@@ -55,17 +64,17 @@
       <!--</p>-->
       <!--</form>-->
       <!-- A little help for the Netlify bots if you're not using a SSG -->
-      <form 
-        name="contactform" 
-        netlify 
-        netlify-honeypot="bot-field" 
+      <form
+        name="contactform"
+        netlify
+        netlify-honeypot="bot-field"
         hidden>
-        <input 
-          type="text" 
-          name="name" >
-        <input 
-          type="email" 
-          name="email" >
+        <input
+          type="text"
+          name="name">
+        <input
+          type="email"
+          name="email">
         <textarea name="remark"/>
       </form>
       <form
@@ -75,7 +84,7 @@
         <input
           type="hidden"
           name="contactform"
-          value="contactform" >
+          value="contactform">
         <div class="card__form-wrapper">
           <span>お名前</span>
           <el-input
@@ -102,7 +111,8 @@
           <el-button
             type="primary"
             native-type="submit"
-            @click="dialogVisible = false">チケット予約</el-button>
+            @click="dialogVisible = false">チケット予約
+          </el-button>
         </div>
       </form>
 
@@ -176,122 +186,271 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card {
+a {
   text-decoration: none;
-  color: #333;
-  padding: 20px;
-  display: flex;
-  font-size: 14px;
-  align-items: center;
-  &__image {
-    margin-right: 35px;
-    img {
-      width: 280px;
-      height: 230px;
-    }
-  }
-  &__top {
-    margin-bottom: 16px;
-  }
-  &__logo {
-    color: #fff;
-    font-weight: bold;
+  color: #337ab7;
+}
+@media (min-width: 769px) {
+  .card {
+    text-decoration: none;
+    color: #333;
+    padding: 20px;
+    display: flex;
     font-size: 14px;
-    border-radius: 2px;
-    background-color: #000;
-    padding: 5px 13px;
-    margin-right: 20px;
-  }
-  &__date {
-    font-size: 18px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-  }
-  &__middle {
-    margin-bottom: 24px;
-  }
-  &__title {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  &__bottom {
-    display: flex;
-    max-width: 500px;
-  }
-  &__bottom-left {
-    margin-right: 68px;
-    min-width: 100px;
-    width: 20%;
-    p {
-      margin-bottom: 6px;
-    }
-  }
-  &__bottom-right {
-    width: 80%;
-    p {
-      margin-bottom: 6px;
-    }
-  }
-  &__button {
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 0.6px;
-    color: #ffffff;
-    background-color: #000;
-    padding: 12px 46px;
-    border-radius: 4px;
-    height: 52px;
-  }
-  &__border {
-    border-bottom: #979797 solid 2px;
-  }
-  &__form-wrapper {
-    display: flex;
     align-items: center;
-    margin-bottom: 10px;
-    span {
+    width: 100%;
+    &__image {
+      margin-right: 35px;
+      img {
+        width: 280px;
+        height: 230px;
+      }
+    }
+    &__top {
+      margin-bottom: 16px;
+    }
+    &__left {
+      display: flex;
+      width: 80%;
+    }
+    &__logo {
+      color: #fff;
+      font-weight: bold;
+      font-size: 14px;
+      border-radius: 2px;
+      background-color: #000;
+      padding: 5px 13px;
+      margin-right: 20px;
+    }
+    &__date {
+      font-size: 18px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+    }
+    &__middle {
+      margin-bottom: 24px;
+    }
+    &__title {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+    }
+    &__bottom-row {
+      display: flex;
+    }
+    &__bottom-left {
+      margin-right: 68px;
+      min-width: 100px;
       width: 20%;
+      margin-bottom: 6px;
+    }
+    &__bottom-right {
+      width: 80%;
+      p {
+        margin-bottom: 6px;
+      }
+    }
+    &__button {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 0.6px;
+      color: #ffffff;
+      background-color: #000;
+      padding: 12px 46px;
+      border-radius: 4px;
+      height: 52px;
+      width: 20%;
+    }
+    &__border {
+      border-bottom: #979797 solid 2px;
+    }
+    &__form-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      span {
+        width: 20%;
+        font-weight: bold;
+      }
+      .el-input {
+        width: 30%;
+        /deep/ &__inner {
+          border: 1px solid #8b94a5;
+        }
+      }
+      .el-textarea {
+        width: 60%;
+        /deep/ &__inner {
+          border: 1px solid #8b94a5;
+        }
+      }
+    }
+  }
+  .dialog-footer {
+    margin: 0 auto;
+    width: 450px;
+  }
+
+  /deep/ .el-dialog {
+    &__header {
+      background-color: #000;
+      color: #fff;
+    }
+    &__title {
+      color: #fff;
       font-weight: bold;
     }
-    .el-input {
-      width: 30%;
-      /deep/ &__inner {
-        border: 1px solid #8b94a5;
-      }
-    }
-    .el-textarea {
-      width: 60%;
-      /deep/ &__inner {
-        border: 1px solid #8b94a5;
-      }
+    &__footer {
+      text-align: center;
     }
   }
-}
-.dialog-footer {
-  margin: 0 auto;
-  width: 450px;
-}
-/deep/ .el-dialog {
-  &__header {
+  .el-button--primary {
     background-color: #000;
-    color: #fff;
-  }
-  &__title {
-    color: #fff;
     font-weight: bold;
-  }
-  &__footer {
-    text-align: center;
+    width: 450px;
   }
 }
-.el-button--primary {
-  background-color: #000;
-  font-weight: bold;
-  width: 450px;
+@media (max-width: 768px) {
+  .card {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+    align-items: center;
+    width: 100%;
+    &__image {
+      margin-right: 13px;
+      img {
+        width: 150px;
+        height: 100%;
+      }
+    }
+    &__top {
+      margin-bottom: 10px;
+    }
+    &__left {
+      display: flex;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    &__logo {
+      color: #fff;
+      font-weight: bold;
+      font-size: 10px;
+      border-radius: 2px;
+      background-color: #000;
+      padding: 2px 10px;
+      margin-right: 10px;
+    }
+    &__date {
+      font-size: 10px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+    }
+    &__middle {
+      margin-bottom: 15px;
+    }
+    &__title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+    }
+    &__bottom-row {
+      display: flex;
+    }
+    &__bottom-left {
+      margin-right: 10px;
+      min-width: 80px;
+      width: 20%;
+      margin-bottom: 6px;
+      font-size: 8px;
+    }
+    &__bottom-right {
+      width: 80%;
+      p {
+        margin-bottom: 6px;
+      }
+    }
+    &__band {
+      text-overflow: ellipsis;
+    }
+    &__button {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.6px;
+      color: #ffffff;
+      background-color: #000;
+      padding: 7px 78px;
+      border-radius: 4px;
+    }
+    &__border {
+      border-bottom: #979797 solid 2px;
+    }
+    &__form-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      align-items: flex-start;
+      span {
+        font-weight: bold;
+      }
+      .el-input {
+        width: 100%;
+        /deep/ &__inner {
+          border: 1px solid #8b94a5;
+        }
+      }
+      .el-textarea {
+        width: 100%;
+        /deep/ &__inner {
+          border: 1px solid #8b94a5;
+        }
+      }
+    }
+  }
+  .dialog-footer {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  /deep/ .el-dialog {
+    &__header {
+      background-color: #000;
+      color: #fff;
+    }
+    &__title {
+      color: #fff;
+      font-weight: bold;
+    }
+    &__footer {
+      text-align: center;
+    }
+  }
+  .el-button--primary {
+    background-color: #000;
+    border-color: #000;
+    font-weight: bold;
+    width: 200px;
+  }
 }
 </style>

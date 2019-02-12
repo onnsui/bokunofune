@@ -24,7 +24,6 @@ import { createClient } from '~/plugins/contentful'
 
 const client = createClient()
 export default {
-  transition: 'slide-left',
   components: {
     Live,
   },
